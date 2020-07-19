@@ -1,10 +1,14 @@
 var app = new Vue({
     el: "#app",
     data: {
-        arrival_date: null
+        arrival_date: null,
+        min_date: null
     },
     created: function() {
-        this.arrival_date = this.formatDate(new Date());
+        var dt = new Date();
+        dt.setDate(dt.getDate()+1);
+        this.arrival_date = this.formatDate(dt);
+        this.min_date = this.arrival_date;
     },
     methods: {
         formatDate: function(dt) {

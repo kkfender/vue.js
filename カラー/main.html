@@ -10,8 +10,13 @@
 </head>
 <body>
     <div class="" id="app">
-    <p>到着希望日:{{arrival_date}}</p>
-    <input type="date" v-model="arrival_date" v-bind:min="min_date">
+        <fieldset>
+            <legend>あなたの好きな色は何ですか？</legend>
+            <input type="color" v-model="color">{{color}}<br>
+            赤:<input type="range" v-model.number="red" min="0" max="255">
+            緑:<input type="range" v-model.number="green" min="0" max="255">
+            青:<input type="range" v-model.number="blue" min="0" max="255">
+        </fieldset>
     </div>
 <script src="main.js"></script>
 </body>
